@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="<%= locals.id?'/form1':'/form' %>"
+      method="post"
+      style="
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: auto 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      "
+    >
+      <label for="text">Text:</label>
+      <input type="text" name="text" id="text" />
+      <label for="number">Number:</label>
+      <input type="number" name="number" id="number" />
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" />
+      <label for="color">Color:</label>
+      <input type="color" name="color" id="color" />
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <label for="confirmPassword">ConfirmPassword:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <label for="range">Range:</label>
+      <input type="range" min="0" max="100" step="10" name="range" id="range" />
+
+      <fieldset>
+        <legend>Какой язык лучший?</legend>
+
+        <div>
+          <input type="radio" id="TS" name="language" value="huey" checked />
+          <label for="TS">TS</label>
+        </div>
+
+        <div>
+          <input type="radio" id="JS" name="language" value="dewey" />
+          <label for="JS">JS</label>
+        </div>
+
+        <div>
+          <input type="radio" id="PHP" name="language" value="louie" />
+          <label for="PHP">PHP</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>В каких IDE ты работал?</legend>
+
+        <div>
+          <input type="checkbox" id="vscode" name="ide" value="vscode" checked />
+          <label for="vscode">VS Code</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="webstorm" name="ide" value="webstorm" />
+          <label for="webstorm">WebStorm</label>
+        </div>
+      </fieldset>
+
+      <label>Please choose one or more pets: </label>
+      <select name="pets" multiple size="4">
+        <optgroup label="4-legged pets">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster" disabled>Hamster</option>
+        </optgroup>
+        <optgroup label="Flying pets">
+          <option value="parrot">Parrot</option>
+          <option value="macaw">Macaw</option>
+          <option value="albatross">Albatross</option>
+        </optgroup>
+      </select>
+      <textarea style="grid-column: span 2;" id="story" name="story" rows="5" cols="33">
+It was a dark and stormy night...
+</textarea
+      >
+      <button style="grid-column: span 2;" type="submit">Отправить</button>
+    </form>
+  </body>
+</html>
